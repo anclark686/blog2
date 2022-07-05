@@ -7,18 +7,26 @@
 	     Since we're loading the form AND receiving the data on the same route,
 		 we don't need to specify the `action` anymore. -->
 		 
-	<div>
+	<div class="create-title">
 		<label for="title">Title</label>
+	</div>
+	<div class="create-title">
 		<input type="text" name="title" id="title" />
 	</div>
 
-	<div>
+	<div class="create-content">
 		<label for="content">Content</label>
+	</div>
+	<div class="create-content">
 		<textarea name="content" id="content"></textarea>
 	</div>
 
-	<div>
-		<input type="submit">
-	</div>
+	<div class="container">
+		<div class="row">
+		  <div class="col text-center">
+			<button type="submit" class="btn btn-info create-button ">Submit</button>
+		  </div>
+		</div>
+	  </div>
 </form>
 {% endblock %}

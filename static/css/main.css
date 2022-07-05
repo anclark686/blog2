@@ -1,0 +1,44 @@
+h1, h2, p {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.posts {
+    background-color: aliceblue;
+    max-width: 50%;
+    border-radius: 2%;
+}
+
+.create-title {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.create-title input {
+    width: 40%;
+}
+
+.create-content {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.create-content textarea {
+    width: 500px;
+    height: 200px;
+}
+
+.create-button {
+    margin-top: 20px;
+    padding: 10px;
+}
+
+ul {
+    list-style: none;
+   
+}
+
+li {
+    padding: 5px;
+}
+

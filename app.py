@@ -1,37 +1,20 @@
 from flask import Flask, render_template, request, redirect, url_for
+from utils import db
 import sqlite3
 
 app = Flask(__name__)
-# posts = {
-#     0: {
-#         'title': 'Hello, world',
-#         'content': 'This is my first blog post!'
-#     }
-# }
-conn = sqlite3.connect('database.db')
-print("Opened database successfully")
 
-conn.execute('CREATE TABLE IF NOT EXISTS posts (id INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT, content TEXT)')
-print("Table created successfully")
-
-def get_posts():
-    conn = sqlite3.connect('database.db')
-    conn.row_factory = sqlite3.Row
-    cur = conn.cursor()
-    cur.execute("SELECT * FROM posts")
-    posts = list(cur.fetchall())
-    return posts
-
+db.connect_db()
 
 @app.route('/')
 def home():
-    posts = get_posts()
+    posts = db.get_posts()
     return render_template('home.html', posts=posts)
 
 
 @app.route('/post/<int:post_id>')
 def post(post_id):
-    posts = get_posts()
+    posts = db.get_posts()
     post = ""
     for i in posts:
         if post_id == i[0]:
