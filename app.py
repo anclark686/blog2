@@ -6,9 +6,21 @@ app = Flask(__name__)
 
 db.connect_db()
 
-@app.route('/')
+
+@app.route('/',  methods=['GET', 'POST'])
 def home():
     posts = db.get_posts()
+
+    if request.method == 'POST':
+        try:
+            posts = db.get_posts()
+            search_input = request.form.get('search_input')
+            print(search_input)
+            search_posts = db.get_posts(search_input)
+            return render_template('home.html', posts=search_posts)
+        except Exception as e:
+            return str(e)
+
     return render_template('home.html', posts=posts)
 
 

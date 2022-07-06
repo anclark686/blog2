@@ -42,3 +42,12 @@ li {
     padding: 5px;
 }
 
+.search {
+    position: relative;
+    display: block;
+    margin : 0 auto;
+    min-width: 200px;
+    max-width: 350px;
+    padding: 10px;
+}
+

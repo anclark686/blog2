@@ -9,10 +9,17 @@ def connect_db():
     print("Table created successfully")
 
 
-def get_posts():
+def get_posts(search=""):
     conn = sqlite3.connect('database.db')
     conn.row_factory = sqlite3.Row
     cur = conn.cursor()
-    cur.execute("SELECT * FROM posts")
-    posts = list(cur.fetchall())
+    if search == "":
+        cur.execute("SELECT * FROM posts")
+        posts = list(cur.fetchall())
+    else:
+        search = '%' + search + '%'
+        cur.execute('SELECT * FROM posts WHERE title LIKE ? OR content LIKE ?;', (search, search))
+        posts = list(cur.fetchall())
+
     return posts
+

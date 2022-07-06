@@ -5,10 +5,13 @@ con = sqlite3.connect("database.db")
 
 cur = con.cursor()
 cur.execute("INSERT INTO posts (title,content) VALUES (?,?)", ("Hello", "something"))
-
+search = '%' + 'app' + '%'
+print(search)
 # The result of a "cursor.execute" can be iterated over by row
-for row in cur.execute('SELECT * FROM posts;'):
-    print(row)
+cur.execute('SELECT * FROM posts WHERE title LIKE ? OR content LIKE ?;', (search, search))
+posts = list(cur.fetchall())
+print("youre here right?")
+print(posts)
 
 # Be sure to close the connection
 con.close()

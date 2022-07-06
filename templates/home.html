@@ -1,7 +1,21 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
+
 <h1>Welcome to your blog.</h1>
+
+<div class="container">
+		<div class="row">
+		  <div class="col text-center">
+			<form class="d-flex search" role="search" method="POST">
+				<input class="form-control me-2 " type="search" placeholder="Search" aria-label="Search" name="search_input">
+				<button class="btn btn-outline-dark" type="submit">Search</button>
+			</form>
+		  </div>
+		</div>
+	  </div>
+
 <h2>Posts</h2>
 
 <div class="container posts">
