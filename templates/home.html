@@ -2,15 +2,17 @@
 
 {% block content %}
 
+{% if g.user %}
+	<h1>Welcome to your blog {{g.user[1].title()}}!</h1>
+{% endif %}
 
-<h1>Welcome to your blog.</h1>
 
 <div class="container">
 		<div class="row">
 		  <div class="col text-center">
 			<form class="d-flex search" role="search" method="POST">
-				<input class="form-control me-2 " type="search" placeholder="Search" aria-label="Search" name="search_input">
-				<button class="btn btn-outline-dark" type="submit">Search</button>
+				<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search_input">
+				<button class="btn btn-info" type="submit">Search</button>
 			</form>
 		  </div>
 		</div>

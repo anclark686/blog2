@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Welcome To Reyaly Blog!</h1>
+<h5>To get started, choose one of the options below:</h5>
+
+	<div class="container">
+		<div class="row">
+		  <div class="col text-center">
+			<a href="{{ url_for('login') }}" class="btn btn-info login-button ">Login</a>
+            <a href="{{ url_for('register') }}" class="btn btn-info register-button ">Register</a>
+		  </div>
+		</div>
+	  </div>
+
+
+{% endblock %}

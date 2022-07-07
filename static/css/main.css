@@ -1,6 +1,20 @@
-h1, h2, p {
+body {
+    min-height: 100%;
+    background-image: url("./../blue.jpg");
+    background-size: cover;
+    background-position: top;
+    min-height: 100vh;
+    /* height: 100vh;  */
+    position: relative;
+    background-attachment: fixed;
+   }
+
+
+
+h1, h2, h5, p {
     text-align: center;
     margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 .posts {
@@ -16,6 +30,7 @@ h1, h2, p {
 
 .create-title input {
     width: 40%;
+    display: initial;
 }
 
 .create-content {
@@ -26,11 +41,14 @@ h1, h2, p {
 .create-content textarea {
     width: 500px;
     height: 200px;
+    position: relative;
+    display: initial;
 }
 
 .create-button {
     margin-top: 20px;
     padding: 10px;
+    align-content: center !important;
 }
 
 ul {
@@ -51,3 +69,21 @@ li {
     padding: 10px;
 }
 
+.logreg-label {
+    text-align: center;
+
+}
+
+.logreg-form {
+    position: relative;
+    display: block;
+    margin : 0 auto;
+    min-width: 200px;
+    max-width: 300px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.create-button, .login-button, .register-button {
+    width: 175px;
+}

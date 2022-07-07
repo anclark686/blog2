@@ -7,20 +7,25 @@
 	<!-- The action has now been removed, and then it defaults to "this page".
 	     Since we're loading the form AND receiving the data on the same route,
 		 we don't need to specify the `action` anymore. -->
-		 
-	<div class="create-title">
-		<label for="title">Title</label>
-	</div>
-	<div class="create-title">
-		<input type="text" name="title" id="title" />
-	</div>
+<div class="container">
+	<div class="row">
 
-	<div class="create-content">
-		<label for="content">Content</label>
+		<div class="create-title col text-center">
+			<label for="title">Title</label>
+		</div>
+		<div class="create-title">
+			<input class="form-control " type="text" name="title" id="title" />
+		</div>
+
+		<div class="create-content">
+			<label for="content">Content</label>
+		</div>
+		<div class="create-content">
+			<textarea class="form-control" name="content" id="content"></textarea>
+
+	  </div>
 	</div>
-	<div class="create-content">
-		<textarea name="content" id="content"></textarea>
-	</div>
+  </div>
 
 	<div class="container">
 		<div class="row">
@@ -29,5 +34,5 @@
 		  </div>
 		</div>
 	  </div>
-
+</form>
 {% endblock %}
