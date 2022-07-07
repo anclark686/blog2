@@ -20,7 +20,6 @@ def before_request():
     if 'user_id' in session:
         user = db.retrieve_user_by_id(int(str(session)[32:-2]))
         g.user = user
-    print(g.user)
 
 
 @app.route('/')
